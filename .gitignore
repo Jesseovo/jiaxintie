@@ -1,0 +1,8 @@
+dist/
+build-tools/
+build-hashes.json
+tests/*.exe
+tests/runtime-*/
+tests/ui-profile/
+tests/ui-shots/
+tests/ui-mode.txt
