@@ -207,6 +207,7 @@ final class CaptureCanvas: NSView, NSTextFieldDelegate {
         guard width > 20, height > 15 else { return }
         let x = min(point.x,selection.maxX-width), y = min(point.y,selection.maxY-height)
         let field = NSTextField(frame:CGRect(x:x,y:y,width:width,height:height))
+        field.identifier = NSUserInterfaceItemIdentifier("annotation-text-input")
         field.font = .systemFont(ofSize:max(18,lineWidth*5),weight:.medium); field.textColor = color
         field.backgroundColor = .white; field.focusRingType = .none; field.delegate = self; field.setAccessibilityLabel("标注文字")
         textAnchor = local(field.frame.origin); textInput = field; addSubview(field); window?.makeFirstResponder(field)

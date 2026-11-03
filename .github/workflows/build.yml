@@ -21,13 +21,13 @@ jobs:
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - name: Build application and installer
-        shell: powershell
+        shell: pwsh
         run: ./build.ps1 -RequireInstaller
       - name: Run rendering and storage regressions
-        shell: powershell
+        shell: pwsh
         run: ./tests/run.ps1 -SkipScreenCapture
       - name: Package Windows release
-        shell: powershell
+        shell: pwsh
         run: |
           $ErrorActionPreference = 'Stop'
           $version = (Get-Content VERSION -Raw).Trim()

@@ -58,14 +58,16 @@ enum AppSmokeTest {
         try require(outputs.last == annotated,"erasing can be undone")
         try button("文字").performClick(nil)
         canvas.mouseDown(with:mouse(.leftMouseDown,CGPoint(x:100,y:100)))
-        guard let field = descendants(canvas).compactMap({$0 as? NSTextField}).first else { throw AppError.message("Text input did not open") }
+        guard let field = descendants(canvas).compactMap({$0 as? NSTextField}).first(where:{$0.identifier?.rawValue == "annotation-text-input"}) else { throw AppError.message("Text input did not open") }
         let fieldEditor = field.currentEditor() as? NSTextView
         if let fieldEditor { fieldEditor.insertText("中文 s",replacementRange:NSRange(location:0,length:fieldEditor.string.utf16.count)) }
         else { field.stringValue = "中文 s" }
         let count = outputs.count; key(1); key(122)
         try require(outputs.count == count && (fieldEditor?.string ?? field.stringValue) == "中文 s","S and F1 leave active text input intact")
-        _ = canvas.control(field,textView:fieldEditor ?? NSTextView(),doCommandBy:#selector(NSResponder.insertNewline(_:)))
-        key(1); try require(outputs.last != annotated,"Chinese annotation is committed to the export")
+        let committed = canvas.control(field,textView:fieldEditor ?? NSTextView(),doCommandBy:#selector(NSResponder.insertNewline(_:)))
+        key(1)
+        if outputs.last == annotated { print("DETAIL: committed=\(committed), inputStillOpen=\(field.superview != nil), field=\(String(reflecting:field.stringValue)), editor=\(String(reflecting:fieldEditor?.string)), marked=\(fieldEditor?.hasMarkedText() ?? false)") }
+        try require(outputs.last != annotated,"Chinese annotation is committed to the export")
         key(122); try require(actions.last == .copy,"F1 completes the selected capture")
         key(99); try require(actions.last == .pin,"F3 completes capture as a pin")
         var cancelled = false; canvas.onCancel = { cancelled = true }; key(53)
