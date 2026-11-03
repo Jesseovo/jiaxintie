@@ -79,23 +79,20 @@
     document.querySelector('.cache-status').textContent = `规则示意：保留截图 ${lastShot - 2}、${lastShot - 1}、${lastShot}，手动图片不变。`;
   });
 
-  const starDialog = document.querySelector('.star-dialog');
-  if (starDialog && typeof starDialog.showModal === 'function') {
+  const starCard = document.querySelector('.star-card');
+  if (starCard) {
     let starTimer;
     const openStar = () => {
       clearTimeout(starTimer);
-      if (starDialog.open) return;
-      starDialog.showModal();
-      root.classList.add('has-star-dialog');
+      starCard.hidden = false;
       try { sessionStorage.setItem('jiaxintie-star-shown', '1'); } catch {}
     };
-    const closeStar = () => starDialog.close();
-    starDialog.addEventListener('close', () => root.classList.remove('has-star-dialog'));
-    starDialog.addEventListener('click', event => {
-      if (event.target === starDialog) closeStar();
+    const closeStar = () => { starCard.hidden = true; };
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && !starCard.hidden) closeStar();
     });
-    starDialog.querySelectorAll('[data-star-close]').forEach(button => button.addEventListener('click', closeStar));
-    starDialog.querySelector('.star-action').addEventListener('click', closeStar);
+    starCard.querySelector('[data-star-close]').addEventListener('click', closeStar);
+    starCard.querySelector('.star-action').addEventListener('click', closeStar);
     document.querySelectorAll('[data-star-open]').forEach(link => link.addEventListener('click', event => {
       event.preventDefault();
       openStar();
