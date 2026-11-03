@@ -6,3 +6,6 @@ tests/runtime-*/
 tests/ui-profile/
 tests/ui-shots/
 tests/ui-mode.txt
+macos/.build/
+macos/.swiftpm/
+.DS_Store

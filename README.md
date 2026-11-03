@@ -1,69 +1,96 @@
-# 夹心贴 1.0.2
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/readme-cover-dark.svg" />
+    <img src="assets/readme-cover-light.svg" width="880" alt="夹心贴 · 截一张，贴在手边。米白色桌面上的截图与小小便签。" />
+  </picture>
+</p>
 
-一个独立的 Windows 截图、标注与桌面贴图工具。使用用户提供的 doro 图片作为图标；菜单仅保留截图、贴图、显隐贴图、最近截图、打开保存文件夹、设置和退出。程序不包含广告、专业版推销、遥测或联网代码。
+<p align="center">
+  <strong>把想留住的画面，贴在手边。</strong><br />
+  <sub>一个安静的截图、标注与桌面贴图小工具。Windows 和 Mac，都可以。</sub>
+</p>
 
-## 安装与启动
+<p align="center">
+  <a href="https://github.com/Jesseovo/jiaxintie/releases/download/v1.0/JiaXinTie-Windows-x64-v1.0.zip"><picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/readme-windows-dark.svg" />
+    <img src="assets/readme-windows-light.svg" width="208" height="56" alt="下载 Windows 版 · v1.0 / x64" />
+  </picture></a>&ensp;<a href="https://github.com/Jesseovo/jiaxintie/releases/download/v1.0/JiaXinTie-macOS-universal-v1.0.zip"><picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/readme-macos-dark.svg" />
+    <img src="assets/readme-macos-light.svg" width="208" height="56" alt="下载 macOS 版 · v1.0 / Apple Silicon + Intel" />
+  </picture></a>
+</p>
 
-运行 `dist/1.0.2/夹心贴-安装程序-1.0.2.exe`。安装时依次选择程序位置和截图保存文件夹，不需要管理员权限。程序启动后位于系统托盘，也可以通过开始菜单打开。更新前请先退出托盘里的旧版夹心贴；升级保留自定义快捷键。
+<p align="center">
+  <a href="https://github.com/Jesseovo/jiaxintie/releases/tag/v1.0">v1.0 发布页</a> · <a href="docs/usage.zh-CN.md">使用手册</a> · <a href="CHANGELOG.md">更新记录</a> · <a href="docs/development.md">参与开发</a>
+</p>
 
-也可直接运行 `dist/1.0.2/夹心贴.exe`；首次启动会要求确认保存文件夹和快捷键。Windows 10/11 x64，使用系统自带的 .NET Framework 4.8。
+---
 
-1.0.2 按 Snipaste 常见的图标顺序与分组重排工具栏，颜色和粗细放到下方选项栏。新增直线、荧光笔、橡皮擦与重做。截图编辑改为局部刷新并缓存已完成标注；全局截图快捷键取消固定等待；贴图滚轮缩放时先快速预览，再补高清缓存。贴图右键的“鼠标穿透”改为“删除”，点击后移除当前桌面贴图。
+## 先把它放在手边
 
-保留 1.0.1 的修复：通过 Windows 原生 BitBlt 解决 F1 截图报错；白底纯图标界面；移除常驻操作说明和每次成功截图的气泡；logo 去白底、裁紧并使用透明 PNG/ICO。
+下载适合你电脑的版本，解压后就可以开始。
 
-如果 Snipaste 等程序同时占用 F1/F3，请先退出它们，或在夹心贴设置里更换快捷键。软件会提示实际注册失败的按键；双击托盘图标仍可以截图。
+| 你的电脑 | 下载内容 | 怎么打开 |
+|---|---|---|
+| Windows 10 / 11，64 位 | [Windows v1.0](https://github.com/Jesseovo/jiaxintie/releases/download/v1.0/JiaXinTie-Windows-x64-v1.0.zip) | 运行安装程序，或直接打开 `夹心贴.exe` |
+| macOS 14 及以上 | [macOS v1.0](https://github.com/Jesseovo/jiaxintie/releases/download/v1.0/JiaXinTie-macOS-universal-v1.0.zip) | 把 `夹心贴.app` 放进“应用程序”再打开；支持 Apple Silicon 和 Intel |
 
-## 默认操作（均可在设置中自定义）
+Windows 版在系统托盘，Mac 版在屏幕顶部菜单栏。首次打开，选好截图保存文件夹就行。Mac 首次截图需要允许屏幕录制权限；当前 Mac 包使用临时签名，尚未经过 Apple 公证。具体步骤见[使用手册](docs/usage.zh-CN.md#安装与启动)。
 
-| 操作 | 默认按键 |
+## 截下来，轻轻贴住
+
+看到想留住的参考图、临时要对照的文字，或者一闪而过的小灵感，不必先给它找一个归处。
+
+**截一张。** 按 F1，拖动鼠标选中想要的部分，再按一次 F1，图片就复制好了。需要存下来时，按 S，直接写进你选好的文件夹。
+
+**贴在旁边。** 按 F3，把剪贴板里的图片贴到桌面。拖到顺手的位置，滚动缩放，和正在做的事情放在一起看。暂时不需要时，隐藏或删除这一张贴图就好。
+
+**继续手头的事。** 夹心贴留在托盘或菜单栏里，不需要登录，也没有广告和联网请求。截图、标注、保存，都在你的电脑上完成。
+
+## 记住三个键就够了
+
+| 按键 | 做什么 |
 |---|---|
-| 开始截图 | F1 |
-| 框选后复制 | F1 |
-| 直接保存 | S |
-| 贴图 | F3 |
-| 显示 / 隐藏全部贴图 | Shift+F3 |
-| 框选完成立即复制 | Ctrl+F1 |
-| 取消截图 / 删除贴图 | Esc |
-| 撤销 / 重做标注 | Ctrl+Z / Ctrl+Y |
-| 贴图原始大小 | 0 |
+| **F1** | 开始截图；框选后再按一次，完成复制 |
+| **F3** | 贴图 |
+| **S** | 保存截图 |
+| Esc | 取消截图，或删除当前贴图 |
 
-F1 开始截图，拖动鼠标框选区域，再按一次 F1 就会复制。按 S 会直接保存 PNG 到已选择的文件夹，不弹出另存为窗口。
+Mac 的 F 键如果默认控制亮度、音量，配合 **Fn** 使用。所有操作也能通过菜单和工具栏点击完成；按键可以在设置中修改，更多操作收在[快捷键说明](docs/usage.zh-CN.md#快捷键)里。
 
-工具栏依次为：矩形、圆形、直线、箭头、画笔、荧光笔、马赛克、文字、橡皮擦；撤销、重做；保存、贴图、取消、完成复制。悬停显示名称和已配置快捷键，选中工具为蓝底。颜色与粗细位于下方；橡皮擦擦除命中的整条标注，并支持撤销。直线工具当前绘制单段直线。
+## 一点标注，刚刚好
 
-初始状态可拖动选区；再点一次当前选中的工具或右键，可退出标注并回到移动状态。尚未标注时可拖动选区边缘调整尺寸；移动状态下右键取消截图。
+圈出重点，加一个箭头，写一句话，或者把不想露出的部分打上马赛克。矩形、圆形、直线、箭头、画笔、荧光笔、马赛克、文字和橡皮擦，都放在选区旁边。画错了，撤销一下再来。
 
-选择文字工具后，在选区里点击并输入；Enter 完成文字。文字输入期间，软件的截图、复制、保存、贴图、撤销等快捷键全部让位于文字框，S 会正常输入，Ctrl+C / Ctrl+Z 使用文字框的正常行为。截图编辑期间暂时注销全局热键，关闭编辑器后重新注册；自定义快捷键也遵守同一规则。
+<p align="center">
+  <img src="screenshots/windows-editor.png" width="820" alt="Windows 演示画面：在截图上圈出标题、添加箭头、马赛克和文字，选区下方是标注工具栏。" />
+</p>
 
-贴图可拖动；滚轮缩放，Ctrl+滚轮调节透明度。右键可复制、保存、恢复原始大小、删除。删除仅移除当前桌面贴图，已保存图片和最近三张缓存继续保留。
+<p align="center"><sub>Windows 演示画面。Mac 使用原生界面，操作保持一致。</sub></p>
 
-## 保存与三张缓存
+输入标注文字时，截图快捷键会暂时让开。中文可以慢慢写，S 也只是一个字母，不会把还没写完的截图保存掉。
 
-```text
-你选择的文件夹/
-  夹心贴-日期时间-唯一标识.png      ← 按 S 手动保存，长期保留
-  缓存/
-    jxt-cache-日期时间-唯一标识.png ← 自动保留最近三张
-```
+## 你的截图，留在你的电脑里
 
-完成复制、保存或贴图时生成一份缓存；取消截图不生成缓存。第四张完成后删除最旧的一张自动缓存。只轮换夹心贴自己命名的缓存文件，不清理该目录内其他文件，也不删除用户手动保存的图片。
+手动保存的图片长期保留，自动缓存只留最近三张。第四张完成后，程序只会轮换自己生成的缓存，不清理其他图片。换一个保存文件夹，旧目录里的内容也会留下。
 
-设置保存在 `%LocalAppData%\JiaXinTie\settings.json`。修改保存目录只影响后续截图，旧目录中的图片继续保留。卸载保留截图及设置。
+贴图可以随时关闭，已保存的图片和最近截图不会跟着消失。需要找回来时，从菜单里的“最近截图”再贴一次。
 
-## 源码与构建
+当前版本专注区域截图、基础标注和桌面贴图。OCR、滚动长截图、自动窗口识别还没有加入；Mac 单次选区位于一块显示器内。已验证的范围和限制写在[验证记录](VALIDATION.md)里。
 
-本项目是可编译的独立实现，依据已经确认的截图、贴图交互设计。运行不依赖 Snipaste EXE、DLL、授权或安装目录。没有将反编译伪代码声称为原始源码。
+## 再往里看看
 
-- `src/Core.cs`：配置、快捷键、PNG保存、三张缓存、剪贴板、截图和标注模型。
-- `src/Rendering.cs`：背景、标注与马赛克缓存及局部绘制。
-- `src/App.cs`：托盘、设置、截图编辑器和贴图窗口。
-- `assets/`：从所提供图片缩小制作的PNG和多分辨率ICO。
-- `installer.iss`：安装向导及保存文件夹选择页。
-- `tests/`：缓存轮换、配置持久化、图像与输入边界验证。
+[使用手册](docs/usage.zh-CN.md) — 安装、权限、完整快捷键、保存位置和常见问题。<br />
+[开发说明](docs/development.md) — Windows / macOS 源码、构建、测试和打包。<br />
+[验证记录](VALIDATION.md) · [更新记录](CHANGELOG.md) · [反馈问题](https://github.com/Jesseovo/jiaxintie/issues)
 
-在项目目录执行 `powershell -ExecutionPolicy Bypass -File .\build.ps1`。应用使用 Windows 自带的 C# 编译器；安装包使用 Inno Setup 6.7.3，编译器预期位于 `build-tools/InnoSetup/ISCC.exe`。Inno Setup 来自官方发布页，下载程序的 Authenticode 签名已验证为有效。
+## 慢慢攒起的小星光
 
-运行 `powershell -ExecutionPolicy Bypass -File .\tests\run.ps1` 验证真实桌面截图、PNG、缓存轮换、配置、标注绘制与 logo。绘制基准入口为 `tests/benchmark.ps1`。UI 验证入口为 `tests/run-ui.ps1`，支持 demo、real、settings、pin 四种模式，使用独立配置与目录，默认改用 F8/F9 避免占用 F1/F3；这不修改正常用户配置。详见 `VALIDATION.md`。
+如果这个小工具替你留住了一点灵感，欢迎[点一颗 Star](https://github.com/Jesseovo/jiaxintie/stargazers)，也欢迎告诉我，下一次你想把什么贴在手边。
 
-当前版本实现区域截图和基础标注、贴图；没有实现 OCR、滚动长截图、自动窗口识别及复杂贴图分组。HDR、受保护内容和系统安全桌面的截图不在已验证范围内。
+---
+
+<p align="center">
+  <sub>Made to keep little moments, by <a href="https://github.com/Jesseovo">Jesse</a>.</sub><br />
+  <sub>截一张，贴在手边。</sub>
+</p>

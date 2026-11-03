@@ -1,4 +1,4 @@
-param([ValidateSet('demo','real','settings','pin')][string]$Mode = 'demo',[switch]$PrepareOnly)
+﻿param([ValidateSet('demo','real','settings','pin')][string]$Mode = 'demo',[switch]$PrepareOnly)
 $ErrorActionPreference = 'Stop'
 $testRoot = $PSScriptRoot
 $projectRoot = Split-Path $testRoot -Parent
@@ -13,6 +13,6 @@ $settings = @{
 [IO.File]::WriteAllText((Join-Path $profilePath 'settings.json'), $settings, (New-Object Text.UTF8Encoding($false)))
 [IO.File]::WriteAllText((Join-Path $testRoot 'ui-mode.txt'), $Mode)
 $compilerPath = Join-Path $env:WINDIR 'Microsoft.NET\Framework64\v4.0.30319\csc.exe'
-& $compilerPath /nologo /utf8output /target:winexe /platform:x64 ('/out:' + (Join-Path $testRoot 'UiHarness.exe')) /reference:System.Windows.Forms.dll /reference:System.Drawing.dll (Join-Path $testRoot 'UiHarness.cs')
+& $compilerPath /nologo /utf8output /codepage:65001 /target:winexe /platform:x64 ('/out:' + (Join-Path $testRoot 'UiHarness.exe')) /reference:System.Windows.Forms.dll /reference:System.Drawing.dll (Join-Path $testRoot 'UiHarness.cs')
 if ($LASTEXITCODE -ne 0) { throw 'UI harness compilation failed.' }
 if (-not $PrepareOnly) { Start-Process -FilePath (Join-Path $testRoot 'UiHarness.exe') -WindowStyle Hidden }

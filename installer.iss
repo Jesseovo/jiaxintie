@@ -1,8 +1,11 @@
 #define AppName "夹心贴"
+#ifndef AppVersion
+  #define AppVersion "1.0"
+#endif
 [Setup]
 AppId={{E67B58A0-D7AC-4D99-9B3C-27848A33DD94}
 AppName={#AppName}
-AppVersion=1.0.2
+AppVersion={#AppVersion}
 AppPublisher=夹心贴
 DefaultDirName={localappdata}\Programs\JiaXinTie
 DefaultGroupName={#AppName}
@@ -11,8 +14,8 @@ DisableDirPage=no
 PrivilegesRequired=lowest
 ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
-OutputDir=dist\1.0.2
-OutputBaseFilename=夹心贴-安装程序-1.0.2
+OutputDir=dist\{#AppVersion}
+OutputBaseFilename=夹心贴-安装程序-{#AppVersion}
 SetupIconFile=assets\app.ico
 UninstallDisplayIcon={app}\夹心贴.exe
 Compression=lzma2
@@ -29,8 +32,8 @@ Name: "chinesesimp"; MessagesFile: "compiler:Languages\ChineseSimplified.isl"
 Name: "desktopicon"; Description: "创建桌面快捷方式"; GroupDescription: "快捷方式："; Flags: unchecked
 
 [Files]
-Source: "dist\1.0.2\夹心贴.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "dist\1.0.2\使用说明.md"; DestDir: "{app}"; Flags: ignoreversion
+Source: "dist\{#AppVersion}\夹心贴.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "dist\{#AppVersion}\使用说明.md"; DestDir: "{app}"; Flags: ignoreversion
 
 [Icons]
 Name: "{group}\夹心贴"; Filename: "{app}\夹心贴.exe"

@@ -70,7 +70,7 @@ class CoreRegression
             }
         }
     }
-    [STAThread] static int Main()
+    [STAThread] static int Main(string[] args)
     {
         Native.EnableDpi();
         string tests = Path.GetFullPath(AppDomain.CurrentDomain.BaseDirectory);
@@ -79,8 +79,10 @@ class CoreRegression
         Directory.CreateDirectory(root);
         try
         {
-            // Exercise the real screen path that failed in 1.0.0, without retaining desktop pixels.
-            for (int i = 0; i < 3; i++)
+            // Headless CI validates rendering and storage without accessing a real desktop.
+            bool skipScreenCapture = args.Contains("--skip-screen-capture");
+            if (skipScreenCapture) Console.WriteLine("SKIP real desktop capture (headless CI)");
+            for (int i = 0; !skipScreenCapture && i < 3; i++)
             {
                 Rectangle bounds;
                 using (Bitmap screen = Native.CaptureDesktop(out bounds))
@@ -121,7 +123,8 @@ class CoreRegression
             try { Shortcuts.Validate(loaded); } catch (ArgumentException) { conflict = true; }
             Check(conflict, "duplicate global shortcuts rejected");
             string changed = Path.Combine(root, "安装后 目录");
-            string exe = Path.Combine(tests, "..", "dist", "1.0.2", "夹心贴.exe");
+            string version = File.ReadAllText(Path.Combine(tests, "..", "VERSION")).Trim();
+            string exe = Path.Combine(tests, "..", "dist", version, "夹心贴.exe");
             using (Process p = Process.Start(new ProcessStartInfo(exe, "--configure \"" + changed + "\" --profile \"" + Settings.ProfileDirectory + "\"") { UseShellExecute = false, CreateNoWindow = true }))
             { if (!p.WaitForExit(10000)) throw new Exception("configure timeout"); Check(p.ExitCode == 0, "installer configure exits successfully"); }
             loaded = Settings.Load();

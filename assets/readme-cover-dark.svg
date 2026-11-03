@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="248" viewBox="0 0 900 248" role="img" aria-labelledby="title desc">
+<title id="title">夹心贴 · JiaXinTie</title><desc id="desc">截一张，贴在手边。温暖的像素桌面、截图选区和便签。</desc>
+<style>text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif}.mono{font-family:Consolas,'Liberation Mono',monospace}.blink{animation:blink 4s steps(1) infinite}@keyframes blink{0%,88%,100%{opacity:1}90%,96%{opacity:.3}}@media(prefers-reduced-motion:reduce){.blink{animation:none}}</style>
+<rect x=".5" y=".5" width="899" height="247" rx="18" fill="#252722" stroke="#414338"/>
+<text class="mono" x="36" y="41" font-size="10" letter-spacing="2" fill="#b6aa95">CAPTURE / ANNOTATE / PIN</text>
+<text x="33" y="111" font-size="50" font-weight="650" letter-spacing="3" fill="#eee8dc">夹心贴</text>
+<text x="36" y="149" font-size="18" fill="#b6aa95">截一张，贴在手边。</text>
+<path d="M36 177h55" stroke="#414338"/>
+<text class="mono" x="36" y="211" font-size="10.5" letter-spacing=".6" fill="#b6aa95">JiaXinTie  /  WINDOWS + macOS  /  v1.0</text>
+<rect x="526" y="22" width="352" height="204" rx="12" fill="#30332c"/>
+<g shape-rendering="crispEdges">
+<path d="M545 207h310v3H545zM560 210h6v7h-6zm274 0h6v7h-6z" fill="#777362"/>
+<path d="M553 39h286v151H553zM664 190h67v9h-67zM644 199h107v4H644z" fill="#777362"/>
+<path d="M562 48h268v133H562z" fill="#45493e"/>
+<path d="M574 61h133v90H574z" fill="#30332c"/>
+<path d="M584 74h70v4h-70zm0 13h102v3H584zm0 10h79v3h-79z" fill="#b6aa95"/>
+<path d="M577 119h93v3h-93z" fill="#d6a1a8"/>
+<path d="M573 60h135v92H573z" fill="none" stroke="#d6a1a8" stroke-width="2" stroke-dasharray="4 3"/>
+<path d="M570 57h6v6h-6zm135 0h6v6h-6zM570 149h6v6h-6zm135 0h6v6h-6z" fill="#d6a1a8"/>
+<path d="M727 84h88v76h-88z" fill="#d6a1a8"/><path d="M735 99h55v3h-55zm0 10h68v3h-68zm0 10h43v3h-43z" fill="#252722"/>
+<path d="M765 74h10v9h-10zm-4 8h18v5h-18zm8 5h3v7h-3z" fill="#eee8dc"/>
+<path d="M696 136v24l7-6 6 12 5-3-7-11 10-1z" fill="#eee8dc"/>
+<path d="M787 164h7v-10h6v6h12v-6h6v10h7v26h-38z" fill="#45493e" stroke="#777362" stroke-width="2"/>
+<path class="blink" d="M797 173h3v4h-3zm15 0h3v4h-3z" fill="#eee8dc"/>
+<path d="M803 182h5v2h-5z" fill="#eee8dc"/>
+<path d="M791 180h5v3h-5zm26 0h5v3h-5z" fill="#d6a1a8"/>
+</g>
+<rect x="578" y="160" width="40" height="14" rx="3" fill="#252722" stroke="#414338"/><text class="mono" x="589" y="170" font-size="9" fill="#eee8dc">F1</text>
+<rect x="625" y="160" width="40" height="14" rx="3" fill="#252722" stroke="#414338"/><text class="mono" x="636" y="170" font-size="9" fill="#eee8dc">F3</text>
+</svg>

@@ -8,7 +8,8 @@ class UiHarness
     [STAThread] static void Main()
     {
         string root = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, ".."));
-        Assembly a = Assembly.LoadFrom(Path.Combine(root, "dist", "1.0.2", "夹心贴.exe"));
+        string version = File.ReadAllText(Path.Combine(root, "VERSION")).Trim();
+        Assembly a = Assembly.LoadFrom(Path.Combine(root, "dist", version, "夹心贴.exe"));
         string modeFile = Path.Combine(root, "tests", "ui-mode.txt");
         string mode = File.Exists(modeFile) ? File.ReadAllText(modeFile).Trim() : "demo";
         if (mode == "settings" || mode == "pin")

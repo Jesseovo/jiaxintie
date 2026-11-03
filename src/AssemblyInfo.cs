@@ -3,5 +3,5 @@ using System.Reflection;
 [assembly: AssemblyDescription("截图、标注与桌面贴图")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("夹心贴")]
-[assembly: AssemblyVersion("1.0.2.0")]
-[assembly: AssemblyFileVersion("1.0.2.0")]
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
