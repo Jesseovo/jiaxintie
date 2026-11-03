@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#faf7f2">
+  <title>夹心贴 JiaXinTie — 截一张，贴在手边</title>
+  <meta name="description" content="夹心贴是 Windows 与 macOS 的截图、标注和桌面贴图工具。F1 截图，F3 贴图，S 保存。图片留在本机，支持最近三张缓存与原生 Retina 截图。">
+  <meta property="og:title" content="夹心贴 · 截一张，贴在手边"><meta property="og:description" content="让参考图、临时对照的文字和一闪而过的灵感，留在顺手的位置。Windows / macOS v1.0。">
+  <meta property="og:type" content="website"><meta property="og:image" content="assets/share-cover.png">
+  <link rel="icon" href="assets/logo.png"><link rel="stylesheet" href="styles.css"><script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到正文</a>
+<header class="site-header wrap">
+  <a class="brand" href="./" aria-label="夹心贴首页"><img src="assets/logo.png" alt="" width="38" height="38"><span>夹心贴</span></a>
+  <nav aria-label="主导航"><a href="#how">怎么用</a><a href="#features">功能</a><a href="about.html">关于</a><a href="guide.html">使用手册</a></nav>
+  <div class="header-actions"><button class="theme-toggle" aria-label="切换深色模式" title="切换明暗模式"><svg><use href="#i-sun"/></svg></button><a class="small-button" href="#download">下载 v1.0 <span>↗</span></a></div>
+</header>
+<main id="main">
+<section class="hero wrap" aria-labelledby="hero-title">
+  <div class="hero-copy">
+    <h1 id="hero-title">截一张，<br>贴在<span class="pink-word">手边<svg viewBox="0 0 250 16" aria-hidden="true"><path d="M4 11 Q116 -2 246 8"/></svg></span>。</h1>
+    
+    <div class="hero-buttons"><a class="button primary" data-download="windows" href="downloads/JiaXinTie-Windows-x64-v1.0.zip"><svg><use href="#i-windows"/></svg>下载 Windows 版 <span>↗</span></a><a class="button secondary" data-download="macos" href="downloads/JiaXinTie-macOS-universal-v1.0.zip"><svg><use href="#i-monitor"/></svg>下载 Mac 版 <span>↗</span></a></div>
+    
+  </div>
+  <div class="hero-art">
+    
+    <div class="demo-stage" data-step="capture" aria-label="截图与贴图操作示意">
+      <div class="workspace-bar"><span class="traffic"><i></i><i></i><i></i></span><span>我的小小工作台</span><svg><use href="#i-layout"/></svg></div>
+      <div class="workspace-content"><div class="workspace-sidebar"><span class="sidebar-block"></span><i></i><i></i><i></i><i></i></div><div class="workspace-document"><h3>今天的小想法</h3><div class="text-lines"><i></i><i></i><i></i></div></div></div>
+      <div class="demo-selection"><i></i><i></i><i></i><i></i></div>
+      <div class="demo-pin"><button class="pin-handle" type="button" aria-label="贴图演示：在贴图步骤中拖动图片"><span class="pin-dot"></span><span>一小块灵感.png</span><svg><use href="#i-pin"/></svg></button><div class="pin-picture"><span class="pin-title">留住这一刻<br>的灵感<span>✳</span></span><span class="drawn-rectangle"></span><svg class="drawn-arrow" viewBox="0 0 95 75"><path d="M6 7 82 61m-23-3 25 4-8-24"/></svg><img src="assets/logo.png" alt="夹心贴的小猫图标" width="128" height="128"></div></div>
+      <div class="demo-toolbar" aria-hidden="true"><svg><use href="#i-rectangle"/></svg><svg><use href="#i-circle"/></svg><svg><use href="#i-arrow"/></svg><svg><use href="#i-pen"/></svg><span>Aa</span><span class="toolbar-divider"></span><span class="color-dot rose"></span><span class="color-dot blue"></span><span class="color-dot yellow"></span><svg><use href="#i-check"/></svg></div>
+      <span class="floating-key"><kbd>F1</kbd></span>
+    </div>
+    <div class="demo-controls" role="group" aria-label="切换操作示意"><button data-demo-step="capture" aria-pressed="true"><span>01</span> 框选</button><button data-demo-step="annotate" aria-pressed="false"><span>02</span> 标注</button><button data-demo-step="pin" aria-pressed="false"><span>03</span> 贴图</button></div>
+    <p class="demo-caption sr-only" aria-live="polite">操作示意 · 点点看，了解一张截图的去处</p>
+  </div>
+</section>
+<section id="how" class="shortcuts-section wrap" aria-labelledby="how-title">
+  <div class="section-heading"><h2 id="how-title">三个键，刚刚好。</h2></div>
+  <div class="shortcut-list"><article><kbd>F1</kbd><div><h3>截图 / 复制</h3></div><span class="shortcut-number">01</span></article><article><kbd>F3</kbd><div><h3>贴图</h3></div><span class="shortcut-number">02</span></article><article><kbd>S</kbd><div><h3>保存 PNG</h3></div><span class="shortcut-number">03</span></article></div>
+  
+</section>
+<section id="features" class="feature-section wrap" aria-labelledby="feature-title">
+  <div class="feature-image"><div class="image-window-bar"><span class="traffic"><i></i><i></i><i></i></span><span>Windows 截图演示</span></div><img src="assets/windows-editor.png" loading="lazy" alt="Windows 版实际演示：矩形圈选标题、添加箭头、马赛克及中文标注。" width="951" height="685"></div>
+  <div class="feature-copy"><h2 id="feature-title">一点标注，<br>就很清楚。</h2><div class="tool-labels"><span>矩形 / 圆形</span><span>直线 / 箭头</span><span>画笔 / 荧光笔</span><span>马赛克</span><span>文字</span><span>橡皮擦</span></div></div>
+</section>
+<section id="pin" class="pin-section" aria-labelledby="pin-title"><div class="wrap pin-inner"><div><h2 id="pin-title">留在旁边，<br>就不用来回找。</h2><div class="pin-benefits"><span><svg><use href="#i-move"/></svg>随手拖动</span><span><svg><use href="#i-zoom"/></svg>滚动缩放</span><span><svg><use href="#i-opacity"/></svg>调节透明度</span></div></div><div class="pin-collage" aria-hidden="true"><div class="reference-note"><span>✳ 配色参考</span><div class="palette"><i></i><i></i><i></i><i></i></div></div><div class="cat-note"><img src="assets/logo.png" alt="" width="140" height="140"></div><div class="code-note"><span class="traffic"><i></i><i></i><i></i></span><code><b>const</b> inspiration = {<br>&nbsp; screenshot: <em>true</em>,<br>&nbsp; keepItClose: <em>true</em><br>};</code></div></div></div></section>
+<section class="local-section wrap" aria-labelledby="local-title"><div class="local-copy"><h2 id="local-title">截图的归处，<br>由你决定。</h2><ul class="plain-list"><li><svg><use href="#i-check"/></svg>图片保存在本机</li><li><svg><use href="#i-check"/></svg>仅轮换最近 3 张</li><li><svg><use href="#i-check"/></svg>手动图片长期保留</li></ul></div><div class="cache-demo"><div class="folder-title"><svg><use href="#i-folder"/></svg><span>我的截图</span></div><div class="permanent-file"><svg><use href="#i-image"/></svg><span>手动保存的图片.png</span><small>长期保留</small></div><div class="cache-title"><svg><use href="#i-folder"/></svg>缓存 <span>仅保留最近 3 张</span></div><div class="cache-slots" aria-live="polite"><div><span>✳</span><small>截图 01</small></div><div><span>↗</span><small>截图 02</small></div><div><span>♡</span><small>截图 03</small></div></div><button class="cache-next" type="button">新增截图 <span>＋</span></button><p class="cache-status sr-only" aria-live="polite">手动保存的图片一直保留，缓存自动轮换。</p></div></section>
+<section id="download" class="download-section wrap" aria-labelledby="download-title"><div class="section-heading"><h2 id="download-title">把夹心贴，放在手边。</h2></div><div class="download-grid"><article><div class="platform-heading"><svg><use href="#i-windows"/></svg><div><h3>Windows</h3><p>Windows 10 / 11 · x64</p></div><span class="version-tag">v1.0</span></div><a class="button primary" href="downloads/JiaXinTie-Windows-x64-v1.0.zip" download><svg><use href="#i-download"/></svg>下载 Windows 版<span>ZIP · 2.34 MB</span></a></article><article><div class="platform-heading"><svg><use href="#i-monitor"/></svg><div><h3>macOS</h3><p>macOS 14+ · Apple Silicon + Intel</p></div><span class="version-tag">v1.0</span></div><a class="button primary" href="downloads/JiaXinTie-macOS-universal-v1.0.zip" download><svg><use href="#i-download"/></svg>下载 Mac 版<span>ZIP · 1.73 MB</span></a></article></div><p class="download-links"><a href="downloads/SHA256SUMS.txt" download>SHA-256 校验文件 ↗</a><a href="guide.html#install">安装与权限说明 ↗</a><a href="https://github.com/Jesseovo/jiaxintie/releases/tag/v1.0" target="_blank" rel="noopener">GitHub 发布记录 ↗</a></p></section>
+<section class="faq-section wrap" aria-labelledby="faq-title"><div><h2 id="faq-title">你可能想知道。</h2></div><div class="faq-list"><details><summary>Mac 按 F1 为什么会调亮度？<span>＋</span></summary><p>Mac 可能把 F 键优先用作亮度、音量等系统功能。配合 Fn 使用 F1、F3 即可，或在 macOS 键盘设置中改为标准功能键。也可以在夹心贴设置里换一个顺手的组合。</p></details><details><summary>截图会上传到哪里？<span>＋</span></summary><p>桌面应用没有联网、遥测和上传逻辑。图片写入你选择的本地文件夹，复制操作写入系统剪贴板。官网只用于介绍和下载安装包，不会读取你的桌面或截图。</p></details><details><summary>自动清理缓存，会删掉我保存的图片吗？<span>＋</span></summary><p>不会。只有“缓存”子目录里由夹心贴按规则命名的自动缓存会轮换，最多保留最近三张。手动保存的图片、无关文件和旧保存目录中的内容保留。</p></details><details><summary>为什么 Mac 第一次截图需要授权？<span>＋</span></summary><p>macOS 要求截图应用获得屏幕录制权限。在系统设置的“隐私与安全性”中允许夹心贴，按系统提示重新打开即可。全局快捷键和标注不需要辅助功能权限。</p></details><details><summary>支持 OCR、滚动长截图或者跨屏框选吗？<span>＋</span></summary><p>v1.0 专注区域截图、基础标注与桌面贴图，尚未实现 OCR、滚动长截图和自动窗口识别。Mac 可以在任一显示器截图，单次选区限定在一块显示器内。HDR 与受保护内容不在完整验证范围内。</p></details><details><summary>在哪里查看源码、反馈问题？<span>＋</span></summary><p>项目由 <a href="https://github.com/Jesseovo" target="_blank" rel="noopener">Jesse</a> 维护。<a href="https://github.com/Jesseovo/jiaxintie" target="_blank" rel="noopener">GitHub 仓库</a>目前为私有，需要相应访问权限；官网的两个安装包可直接下载。反馈时请提供系统版本、复现步骤及不含私人内容的示例。</p></details></div></section>
+<section class="about-strip wrap"><img src="assets/logo.png" alt="" width="64" height="64"><div><h2>小工具，也可以认真做。</h2></div><a href="about.html">多了解一点夹心贴 <span>↗</span></a></section>
+</main>
+<footer class="site-footer wrap"><a class="brand" href="./"><img src="assets/logo.png" alt="" width="32" height="32"><span>夹心贴</span></a><nav aria-label="页脚导航"><a href="about.html">关于产品</a><a href="guide.html">使用手册</a><a href="#download">下载 v1.0</a><a href="https://github.com/Jesseovo" target="_blank" rel="noopener">Jesse ↗</a></nav></footer>
+<svg class="icon-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+<symbol id="i-windows" viewBox="0 0 24 24"><path d="M3 4h8v7H3zm10 0h8v7h-8zM3 13h8v7H3zm10 0h8v7h-8z" fill="currentColor" stroke="none"/></symbol><symbol id="i-monitor" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="13" rx="2"/><path d="M8 21h8m-4-5v5"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></symbol><symbol id="i-pin" viewBox="0 0 24 24"><path d="m8 3 8 0-1 7 4 5H5l4-5zm4 12v7"/></symbol><symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 9v11"/></symbol><symbol id="i-rectangle" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/></symbol><symbol id="i-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></symbol><symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 20 20 4M9 4h11v11"/></symbol><symbol id="i-pen" viewBox="0 0 24 24"><path d="m16 3 5 5-12 12-6 1 1-6zm-2 2 5 5"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></symbol><symbol id="i-text" viewBox="0 0 24 24"><path d="M4 7V4h16v3M12 4v17m-4 0h8"/></symbol><symbol id="i-move" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M8 6l4-4 4 4M8 18l4 4 4-4M6 8l-4 4 4 4m12-8 4 4-4 4"/></symbol><symbol id="i-zoom" viewBox="0 0 24 24"><circle cx="10" cy="10" r="7"/><path d="m15 15 6 6M6 10h8m-4-4v8"/></symbol><symbol id="i-opacity" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18Z" fill="currentColor" stroke="none"/></symbol><symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7V4h6l2 3h10v13H3z"/></symbol><symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8" cy="8" r="1.5"/><path d="m3 17 5-5 4 4 4-5 5 7"/></symbol><symbol id="i-download" viewBox="0 0 24 24"><path d="M12 2v13m-5-5 5 5 5-5M3 16v5h18v-5"/></symbol>
+</defs></svg>
+</body></html>
