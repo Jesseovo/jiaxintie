@@ -56,7 +56,7 @@ jobs:
         run: |
           dist/macOS/夹心贴.app/Contents/MacOS/JiaXinTie --smoke-test
           codesign --verify --deep --strict dist/macOS/夹心贴.app
-          lipo -verify_arch arm64 x86_64 dist/macOS/夹心贴.app/Contents/MacOS/JiaXinTie
+          lipo dist/macOS/夹心贴.app/Contents/MacOS/JiaXinTie -verify_arch arm64 x86_64
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: macos-release
