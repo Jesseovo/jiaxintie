@@ -1,0 +1,75 @@
+name: Deploy product website to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - website/**
+      - docs/ABOUT.md
+      - docs/usage.zh-CN.md
+      - scripts/build-product-site.py
+      - scripts/check-product-site.py
+      - .github/workflows/pages.yml
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build and check product website
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: read
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: ${{ github.event_name == 'release' && 'main' || github.sha }}
+          persist-credentials: false
+      - name: Configure GitHub Pages
+        id: pages
+        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
+      - name: Download published v1.0 packages
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: >-
+          gh release download v1.0
+          --pattern 'JiaXinTie-Windows-x64-v1.0.zip'
+          --pattern 'JiaXinTie-macOS-universal-v1.0.zip'
+          --pattern 'SHA256SUMS.txt'
+          --dir build-tools/release-v1.0/assets
+      - name: Build website and verify release checksums
+        env:
+          PAGES_URL: ${{ steps.pages.outputs.base_url }}
+        run: python3 scripts/build-product-site.py --output build-tools/product-site --public-url "$PAGES_URL"
+      - name: Check pages, links and downloads
+        run: python3 scripts/check-product-site.py build-tools/product-site
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
+        with:
+          path: build-tools/product-site
+
+  deploy:
+    name: Publish GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4

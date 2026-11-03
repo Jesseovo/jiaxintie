@@ -21,7 +21,7 @@
 </p>
 
 <p align="center">
-  <a href="https://jiaxintie.exactlake28.chatgpt.site/">产品官网</a> · <a href="docs/ABOUT.md">关于夹心贴</a> · <a href="https://github.com/Jesseovo/jiaxintie/releases/tag/v1.0">v1.0 发布页</a> · <a href="docs/usage.zh-CN.md">使用手册</a> · <a href="CHANGELOG.md">更新记录</a> · <a href="docs/development.md">参与开发</a>
+  <a href="https://jesseovo.github.io/jiaxintie/">产品官网</a> · <a href="docs/ABOUT.md">关于夹心贴</a> · <a href="https://github.com/Jesseovo/jiaxintie/releases/tag/v1.0">v1.0 发布页</a> · <a href="docs/usage.zh-CN.md">使用手册</a> · <a href="CHANGELOG.md">更新记录</a> · <a href="docs/development.md">参与开发</a>
 </p>
 
 ---
@@ -80,7 +80,7 @@ Mac 的 F 键如果默认控制亮度、音量，配合 **Fn** 使用。所有�
 
 ## 再往里看看
 
-[产品官网](https://jiaxintie.exactlake28.chatgpt.site/) — 产品展示和可直接下载的双平台安装包。<br />
+[产品官网](https://jesseovo.github.io/jiaxintie/) — 产品展示和可直接下载的双平台安装包。<br />
 [关于夹心贴](docs/ABOUT.md) — 产品定位、适用场景、功能、隐私和版本边界。<br />
 [使用手册](docs/usage.zh-CN.md) — 安装、权限、完整快捷键、保存位置和常见问题。<br />
 [开发说明](docs/development.md) — Windows / macOS 源码、构建、测试和打包。<br />

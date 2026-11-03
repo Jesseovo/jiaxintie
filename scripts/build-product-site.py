@@ -11,8 +11,9 @@ SOURCE = ROOT / "website"
 parser = argparse.ArgumentParser()
 parser.add_argument("--output", type=Path, required=True)
 parser.add_argument("--release-dir", type=Path, default=ROOT / "build-tools/release-v1.0/assets")
-parser.add_argument("--public-url", default="https://jiaxintie.exactlake28.chatgpt.site")
+parser.add_argument("--public-url", default="https://jesseovo.github.io/jiaxintie")
 args = parser.parse_args()
+args.public_url = args.public_url.rstrip("/")
 output = args.output.resolve()
 output.mkdir(parents=True, exist_ok=True)
 
@@ -138,6 +139,7 @@ for filename in sorted(expected | {"SHA256SUMS.txt"}):
     shutil.copy2(release_dir / filename, output / "downloads" / filename)
 
 (output / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {args.public_url}/sitemap.xml\n")
+(output / ".nojekyll").touch()
 urls = ["", "about.html", "guide.html"]
 (output / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + "".join(f"<url><loc>{args.public_url}/{path}</loc></url>" for path in urls) + "</urlset>")
 print("Static product site built:", output)
