@@ -78,4 +78,31 @@
     item.append(symbol, label); slots.append(item);
     document.querySelector('.cache-status').textContent = `规则示意：保留截图 ${lastShot - 2}、${lastShot - 1}、${lastShot}，手动图片不变。`;
   });
+
+  const starDialog = document.querySelector('.star-dialog');
+  if (starDialog && typeof starDialog.showModal === 'function') {
+    let starTimer;
+    const openStar = () => {
+      clearTimeout(starTimer);
+      if (starDialog.open) return;
+      starDialog.showModal();
+      root.classList.add('has-star-dialog');
+      try { sessionStorage.setItem('jiaxintie-star-shown', '1'); } catch {}
+    };
+    const closeStar = () => starDialog.close();
+    starDialog.addEventListener('close', () => root.classList.remove('has-star-dialog'));
+    starDialog.addEventListener('click', event => {
+      if (event.target === starDialog) closeStar();
+    });
+    starDialog.querySelectorAll('[data-star-close]').forEach(button => button.addEventListener('click', closeStar));
+    starDialog.querySelector('.star-action').addEventListener('click', closeStar);
+    document.querySelectorAll('[data-star-open]').forEach(link => link.addEventListener('click', event => {
+      event.preventDefault();
+      openStar();
+    }));
+    let alreadyShown = false;
+    try { alreadyShown = sessionStorage.getItem('jiaxintie-star-shown') === '1'; } catch {}
+    if (location.hash === '#star') openStar();
+    else if (!alreadyShown) starTimer = setTimeout(openStar, 8000);
+  }
 })();
