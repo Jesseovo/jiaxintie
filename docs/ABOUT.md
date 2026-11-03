@@ -55,7 +55,7 @@ v1.0 专注日常区域截图和贴图，尚未实现 OCR、滚动长截图、�
 
 ## 维护、反馈与参与
 
-维护者：[Jesse](https://github.com/Jesseovo)。产品仓库：[Jesseovo/jiaxintie](https://github.com/Jesseovo/jiaxintie)。仓库目前为私有，需要相应权限访问源码和 Issue；不影响官网安装包的公开下载。
+维护者：[Jesse](https://github.com/Jesseovo)。产品仓库：[Jesseovo/jiaxintie](https://github.com/Jesseovo/jiaxintie)。源码、发布记录和 Issue 均可在 GitHub 查看，官网由 GitHub Pages 托管。
 
 反馈时请提供系统版本、应用版本、复现步骤、实际结果及预期结果。附图请使用不含私人内容的演示画面，不要提交真实截图、剪贴板内容或完整个人路径。
 

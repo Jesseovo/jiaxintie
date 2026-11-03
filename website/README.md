@@ -1,6 +1,6 @@
 # 产品官网
 
-GitHub Pages 地址（启用后生效）：https://jesseovo.github.io/jiaxintie/
+GitHub Pages 地址：https://jesseovo.github.io/jiaxintie/
 
 此目录是官网的可维护源码。首页保持简洁，详细内容分别来自 `docs/ABOUT.md` 与 `docs/usage.zh-CN.md`，构建后生成 About 和使用手册页面。
 
