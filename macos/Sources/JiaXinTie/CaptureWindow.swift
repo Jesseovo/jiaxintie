@@ -213,9 +213,13 @@ final class CaptureCanvas: NSView, NSTextFieldDelegate {
     }
     private func commitText() {
         guard let field = textInput else { return }
-        // Finish IME composition before reading the field value; local and global shortcuts remain paused.
+        // Read the active field editor: older macOS versions do not synchronize
+        // NSTextField.stringValue until editing ends, and endEditing can discard it.
+        let editor = field.currentEditor() as? NSTextView
+        editor?.unmarkText()
+        let text = editor?.string ?? field.stringValue
         window?.endEditing(for:field)
-        if !field.stringValue.isEmpty { history.append(Mark(tool:.text,start:textAnchor,color:color,width:lineWidth,text:field.stringValue)) }
+        if !text.isEmpty { history.append(Mark(tool:.text,start:textAnchor,color:color,width:lineWidth,text:text)) }
         field.removeFromSuperview(); textInput = nil; window?.makeFirstResponder(self); needsDisplay = true; updateToolbar()
     }
     func control(_ control: NSControl, textView: NSTextView, doCommandBy selector: Selector) -> Bool {
